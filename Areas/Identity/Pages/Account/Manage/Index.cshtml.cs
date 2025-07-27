@@ -39,6 +39,12 @@ namespace Library_Management_System.Areas.Identity.Pages.Account.Manage
 
             [Display(Name = "Your Address")]
             public string Adress { get; set; }
+
+            [Display(Name ="Your bload Group")]
+            public string BloadGroup { get; set;}
+
+            [Display(Name = "Give your ID nuuber")]
+            public string IDNumber { get; set; }
         }
 
         private async Task LoadAsync(ApplicationUser user)
@@ -51,7 +57,9 @@ namespace Library_Management_System.Areas.Identity.Pages.Account.Manage
             Input = new InputModel
             {
                 PhoneNumber = phoneNumber,
-                Adress = user.Adress
+                Adress = user.Adress,
+                BloadGroup = user.BloadGroup,
+                IDNumber = user.IDNumber
             };
         }
 
@@ -83,6 +91,9 @@ namespace Library_Management_System.Areas.Identity.Pages.Account.Manage
             }
 
             user.Adress = Input.Adress;
+            user.BloadGroup = Input.BloadGroup;
+            user.IDNumber = Input.IDNumber;
+            user.IDNumber = Input.IDNumber;
 
             var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
             if (Input.PhoneNumber != phoneNumber)

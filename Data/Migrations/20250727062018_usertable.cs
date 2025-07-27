@@ -1,0 +1,28 @@
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace Library_Management_System.Data.Migrations
+{
+    /// <inheritdoc />
+    public partial class usertable : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<string>(
+                name: "BloadGroup",
+                table: "AspNetUsers",
+                type: "nvarchar(max)",
+                nullable: true);
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropColumn(
+                name: "BloadGroup",
+                table: "AspNetUsers");
+        }
+    }
+}
